@@ -1,0 +1,26 @@
+// 1. Actual Volume : 
+IF [Channel]="PHONE" THEN [Inbound]-[Disconnected]-[Shortcalls] ELSE [Case Ct] END
+
+// 2. Csat 구하는 공식 : 
+INT([Satisfactionscore 1Through7]>=6) 
+
+// Csat 구하는 공식 (OOS 제외) :  
+IF [Product]<>'Out of Scope' then INT([Satisfactionscore 1Through7]>=6) END
+
+// 3. Dsat 구하는 공식 : 
+INT([Satisfactionscore 1Through7]<=5) 
+
+// Dsat 구하는 공식 (OOS 제외) :  
+IF [Product]<>'Out of Scope' THEN INT([Satisfactionscore 1Through7]<=5)END
+
+// 4. Survey Response 구하는 공식 : 
+INT([Satisfactionscore 1Through7]>=1) 
+
+// Survey Response 구하는 공식 (OOS 제외) :  
+IF [Product]<>'Out of Scope' THEN INT([Satisfactionscore 1Through7]>=1) END
+
+// 5. Score 구하는 공식 : 
+SUM([Csat])/SUM([Survey Response])  숫자형식 0.00% 
+
+//Score 구하는 공식 (OOS 제외) :  
+SUM([Csat(Excl. OOS)])/SUM([Survey Response(Excl. OOS)]) 
