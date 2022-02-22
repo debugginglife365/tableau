@@ -1,0 +1,8 @@
+
+
+**POS 는 OOS가 없다. 
+Psat # : If [Satisfactionscore 1Through7]>=6 THEN [Satisfactionscore 1Through7] END
+Dsat # : If [Satisfactionscore 1Through7]<=5 THEN [Satisfactionscore 1Through7] END
+Psat % : COUNT([Csat])/SUM([Survey Received])
+SDD # : COUNT(IF [Lv1 Driver]='Support' THEN [Lv1 Driver] END)
+SDD% : [SDD #]/SUM([Survey Received])
