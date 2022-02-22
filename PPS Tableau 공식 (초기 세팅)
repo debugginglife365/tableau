@@ -24,3 +24,6 @@ SUM([Csat])/SUM([Survey Response])  숫자형식 0.00% 
 
 //Score 구하는 공식 (OOS 제외) :  
 SUM([Csat(Excl. OOS)])/SUM([Survey Response(Excl. OOS)]) 
+
+// SL 
+SUM([Sla Met])/SUM([Processed Volume])
